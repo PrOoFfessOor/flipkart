@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+        }
+        #container{
+            background-color: black;
+            width: 100vw;
+            height: 10vh;
+        }
+        #slideBar{
+            background-color: black;
+            width: 100px;
+            height: 100vh;
+            position: fixed;
+            left:-100px;
+            transition: left 0.3s ease;
+            text-align: center;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+        button{
+            width: 30px;
+            height: 30px;
+            background-color: black;
+            color: white;
+            font-size: 20px;
+        }
+        span{
+            color: white;
+        }
+        input{
+            margin-left:100px;
+        }
+        #main{
+            margin:50px 200px;
+        }
+        #main img{
+            border:2px solid black;
+        }
+        #search{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button onclick="openS()">&#9776;</button>
+        <span>Flipkart</span>
+        <input id="input" type="text" placeholder="search">
+        <button id="search" onclick="searc()">Search</button>
+    </div>
+    <div id="slideBar">
+        <button onclick="closeS()">X</button>
+        <a href="">HOME</a>
+    </div>
+    <div id="main">
+        <h1 id="h">This is Flipkart</h1>
+        <a href="class1.html"><img src="potato.jpg" width="50px" height="50px"></a>
+        <p id="p"></p>
+    </div >
+</body>
+<script>
+    let slideBar=document.getElementById('slideBar')
+    function openS(){
+        slideBar.style.left="0px"
+    }
+    function closeS(){
+        slideBar.style.left="-100px"
+    }
+    let input=document.getElementById('input')
+    let a=input.value
+    
+    let p=document.getElementById("p")
+    function searc(){
+
+        if(a=="potato"){
+            p.textContent="potato found"
+        }
+        
+    }
+    
+</script>
+</html>
